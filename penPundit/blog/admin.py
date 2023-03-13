@@ -5,8 +5,12 @@ from .models import Category, Post
 
 class Category_admin(admin.ModelAdmin):
     list_display = ('image_tag', 'title', 'description', 'add_date')
+    search_fields = ('title',)
 
 class Post_admin(admin.ModelAdmin):
     list_display = ('image_tag', 'title', 'content')
+    search_fields = ('title',)
+
+
 admin.site.register(Category, Category_admin)
 admin.site.register(Post, Post_admin)
