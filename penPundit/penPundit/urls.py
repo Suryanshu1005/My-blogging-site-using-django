@@ -16,9 +16,11 @@ Including another URLconf
 from django.conf import settings
 from django.contrib import admin
 from django.conf.urls.static import static
-from django.urls import path
+from django.urls import path, include
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('tinymce/', include('tinymce.urls')),
 ]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
  #this static function is required to make the media folder permanent for all the media used and will be used in future.

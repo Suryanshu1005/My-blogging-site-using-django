@@ -1,5 +1,7 @@
 from django.contrib import admin
 from .models import Category, Post
+from django.contrib.admin import ModelAdmin, register
+
 
 # Register your models here.
 
