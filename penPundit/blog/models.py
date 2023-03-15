@@ -27,6 +27,9 @@ class Post(models.Model):
     cat= models.ForeignKey(Category, on_delete=models.CASCADE)
     image = models.ImageField(upload_to='post/')
 
+    def __str__(self):
+        return self.title
+
     def image_tag(self):
         return format_html('<img src = "/media/{}" style="width:40px;height=40px;border-radius:50%" />'.format(self.image))
 

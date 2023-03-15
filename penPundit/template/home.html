@@ -3,7 +3,16 @@
 {% block title %}Welcome to PenPundit{% endblock %}
 
 {% block content %}
-    <h1>
-        This is inside home page
-    </h1>
+
+        <div class = "container">
+            <div class = "row">
+                <div class  = "col s12">
+                    {% for p in posts %}
+                    {{p.title | safe}}
+                    {{p.content | safe}}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+
 {% endblock %}
